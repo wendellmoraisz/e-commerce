@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Baloo da 2';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.menu {
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    height: 40px;
+    width: 100%;
+    font-size: 1.5rem;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    z-index: 9999999;
+}
+
+.menu ul {
+    display: flex;
+    list-style:none;
+}
+
+.cart{
+    margin-right: 10vw;
+}
+
+.menu h2 {
+    margin-left: 10%;
+}
+
+.menu h2 a{
+    color: #fff;
+} 
+
+.menu ul li {
+    margin-left: 20px;
+    padding: 0px;
+}
+
+.menu ul li a i{
+    color: #fff;
+    padding: 10px;
+}
+
+.menu ul .user {
+    padding: 20px;
+}
+
+.menu .search {
+    background: #fff;
+    width: 50%;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search input {
+    height: 100%;
+    width: 85%;
+    font-size: 20px;
+    border: none;
+}
+
+.search input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.menu .search i {
+    color: #222;
+    width: 20%;
+    padding: 10px 10px 10px 5px;
+}
+
+.informations {
+    background-color: #222;
+    margin-top: 30px;
+    font-size: 17px;
+    padding: 10px;
+    position: absolute;
+    display: none;
+    right: 9%;
+    top: 45px;
+    z-index: 1;
+}
+
+.informations ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.informations ul li {
+    padding: 5px;
+}
+
+.informations ul li a{
+    color: #fff;
+}
+
+.frete{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 40px;
+}
+
+.categorias {
+    padding-top: 80px;
+    height: 50px;
+    border-bottom: 1px solid #cfcbcb;
+    display: flex;
+    justify-content: center;
+}
+
+.categorias ul {
+    width: 100%;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.categorias li a {
+    color: #222;
+    padding-bottom: 15px;
+}
+
+.categorias li a:hover {
+    border-bottom: 2px solid #222;
+}
+
+.categorias li a:hover .itens-cat {
+    display: flex;
+}
+
+.itens-cat {
+    background-color: #fff;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    display: none;
+    justify-content: space-evenly;
+    height: 220px;
+    position: absolute;
+    z-index: 99999;
+}
+
+.itens-cat ul{
+    list-style: none;
+}
+
+.itens-cat a {
+    color: #222;
+}
+
+.inv {
+    position: absolute;
+    z-index: 999999999;
+    top: 40%;
+    width: 100%;
+    height: 30px;
+}
+
+.banner {
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: 50vh;
+}
+
+.img2 {
+    height: 50vh;
+    position: absolute;
+    width: 100%;
+    transition: all .5s;
+}
+
+.buttons-wrapper :nth-child(1){
+    width: 100%;
+    height: 100%;
+    font-size: 4rem;
+    color: #fff;
+}
+
+.banner a i {
+    margin: 20px;
+}
+
+.banner .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#back, #next {
+    z-index: 9999;
+}
+
+.banner .buttons-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+}
+
+.categorias-destaque {
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.categorias-destaque ul {
+    justify-content: space-between;
+    display: flex;
+}
+
+.categorias-destaque li {
+    object-fit: cover;
+    position: relative;
+    list-style: none;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.categorias-destaque p {
+    font-size: 1.8em;
+    width: 100%;
+    color: #fff;
+    top: 50%;
+    position: absolute;
+    /*-webkit-text-stroke: 1px #222;
+    text-stroke: 1px #222;*/
+    /*text-shadow: 
+    -1px -1px 0px #222, 
+    -1px 1px 0px #222,                    
+     1px -1px 0px #222,                  
+     1px 0px 0px #222;*/
+}
+
+.categorias-destaque h2 {
+    margin: 20px;
+}
+
+.categorias-destaque img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .3s ease;
+}
+
+.categorias-destaque li:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.produtos {
+    margin: 50px auto;
+    max-width: 1250px;
+}
+
+.produtos ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.produtos li {
+    padding: 10px;
+    margin: 1px;
+    flex-direction: column;
+    display: flex;
+    width: 370px;
+    height: 470px;
+}
+
+.produtos li:hover {
+    border: solid 1px #222;
+}
+
+.img-costas {
+    display: none;
+}
+
+.produtos ul li:hover .img-costas {
+    display: block;
+}
+
+.produtos ul li:hover .image{
+    display: none;
+}
+
+.produtos li :nth-child(2){
+    font-size: 1.3em;
+    padding: 2px;
+}
+
+.produtos li :nth-child(3){
+    padding: 5px 0px;
+}
+
+.produtos li img {
+    width: 100%;
+    height: 100%;
+} 
+
+.categoria-produto {
+    color: #929292;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.in-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+footer .title {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+footer .title a {
+    color: #fff;
+}
+
+footer .title .social a{
+    margin: 0 10px;
+}
+
+.foot-wrapper {
+    width: 800px;
+    margin: auto;
+}
+
+.login {
+    margin: 15vh auto;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    display: none;
+}
+
+.login h2 {
+    text-align: center;
+}
+
+.login a {
+    text-decoration: underline;
+    text-align: right;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login input,
+ .login button{
+    margin: 15px;
+    padding: 20px;
+}
+
+.login a {
+    margin: 0px 15px;
+}
+
+.login button {
+    cursor: pointer;
+    border: solid 1px #222;
+}
+
+.login .entrar {
+    background-color: #222;
+    color: #fff;
+}
+
+.login .criar-conta {
+    background-color: #fff;
+}
+
+.chat-icon {
+    top: 90%;
+    left: 90%;
+    position: fixed;
+    font-size: 50px;
+}
+
+.chat-icon a {
+    color: #222;
+}
+
+.chat-app {
+    position: fixed;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    top: 48%;
+    left: 80%;
+    width: 300px;
+    margin-right: 40px;
+    border: solid 1px #222;
+    background-color: #fff;
+    z-index: 99999999;
+}
+
+.chat-app input {
+    border: none;
+    width: 85%;
+    height: 30px;
+    margin: 0;
+}
+
+.chat-app a {
+    color: #222;
+    font-size: 20px;
+}
+
+.write {
+    display: flex;
+    align-items: center;
+}
+
+.write button{
+    background-color: #fff;
+    border-radius: 0;
+    border: none;
+    width: 15%;
+    height: 30px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.messages {
+    background-color: #ebe6e6;
+    height: 300px;
+    padding: 10px;
+}
+.messages p {
+    color: #fff;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.messages .bot-side {
+    margin-right: 50px;
+}
+
+.messages .client-side {
+    text-align: right;
+    margin-left: 50px;
+}
+
+.messages .bot-side::before {
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #222;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -5px;
+}
+
+.messages .client-side::after {
+    content: "";
+    position: absolute;
+    border-left: .5rem solid #222;
+    border-top: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    right: -5px;
+}
+
+.msg-top {
+    padding: 0 10px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.msg-user {
+    display: flex;
+}
+
+.msg-top i {
+    margin-right: 10px;
+    font-size: 25px;
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    /*.produtos ul {
+        margin: 50px ;
+    }*/
+
+    .produtos li {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 900px) {
+    .banner {
+        height: 30vh;
+    }
+
+    .banner img {
+        height: 30vh;
+    }
+
+    .categorias-destaque {
+        display: none;
+    }
+
+    .banner {
+        margin-bottom: 50px;
+    }
+
+    .buttons-wrapper .buttons a i{
+        font-size: 2rem;
+    }
+    .banner .buttons-wrapper {
+        top: 30%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .chat-app,
+    .chat-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 660px){
+    .produtos li {
+        margin: auto;
+    }
+    .menu {
+        display: block;
+        width: 100vw;
+        height: auto;
+        padding: 10px 0 0 0;
+    }
+
+    .menu ul {
+        position: absolute;
+        top: 6px;
+        left: 60%;
+    }
+
+    .menu .search {
+        padding-left: 5%;
+        width: 95%;
+        border-radius: 0;
+    }
+    .search input{
+        width: 85%;
+        margin: 0;
+    }
+
+    .menu .search a {
+        width: 10%;
+        text-align: center;
+        align-items: center;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 840px) {
+    .foot-wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width: 963px) {
+    .produtos ul{
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 485px){
+    .frete p,
+    .search input {
+        font-size: 15px;
+    }
+    .categorias ul li {
+        font-size: 10px;
+    }
+    .menu ul li a {
+        font-size: 20px;
+    }
+    .menu h2 {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>FutNets</title>
+</head>
+<body>
+    <section class="menu">
+        <h2>
+            <a href="">
+                FutNets
+                <i class="fas fa-futbol"></i>
+            </a>
+        </h2>
+
+        <div class="search">
+            <input type="text" placeholder="O que você procura? :)">
+            <a href=""><i class="fas fa-search"></i></a>
+        </div>
+
+        <ul>
+            <li><a class="user" href="#"><i class="fas fa-user"></i></a></li>
+            <li class="cart"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+
+        <div class="informations">
+            <ul>
+                <li><a href="#" class="ent-cad">Entre / Cadastre-se</a></li>
+                <li><a href="">Meus Pedidos</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="categorias">
+        <ul>
+            <li><a href="#" id="br-cat">BRASILEIROS</a></li>
+            <li><a href="#" id="inter-cat">INTERNACIONAIS</a></li>
+            <li><a href="#" id="sele-cat">SELEÇÕES</a></li>
+            <li><a href="#">CALÇADOS</a></li>
+        </ul>
+    </div>
+
+    <div class="itens-cat">
+        <ul>
+            <h3>Gênero</h3>
+            <li><a href="">Masculino</a></li>
+            <li><a href="">Feminino</a></li>
+            <li><a href="">Infantil</a></li>
+        </ul>
+    </div>
+    
+    <div id="inv" class="inv"></div>
+
+    <div class="frete">
+        <p>
+            FRETE GRÁTIS PARA TODO O BRASIL
+            <i class="fas fa-truck"></i>
+        </p>
+    </div>
+
+    <section class="banner">
+        <div class="banners">
+            <a class="img2" href="">
+                <img src="/img/banner.webp" alt="">
+            </a>
+            <a class="img2" href="">
+                <img src="/img/banner2.webp" alt="">
+            </a>
+        </div>
+        <div class="buttons-wrapper">
+            <div class="buttons">
+                <a href="#" id="back"><i class="fas fa-angle-double-left"></i></a>
+                <a href="#" id="next"><i class="fas fa-angle-double-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="categorias-destaque">
+        <h2>Categorias em Destaque</h2>
+        <ul>
+            <li>
+                <a href="">
+                    <img src="/img/mochila.webp" alt="">
+                    <p>Mochilas</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="/img/tenis.webp" alt="">
+                    <p>Tênis de Corrida</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="/img/bola.jpg" alt="">
+                    <p>Bolas de Futebol</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="/img/calcao.jpg" alt="">
+                    <p>Calções</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="produtos">
+        <ul>                 
+        </ul>
+    </section>
+
+    <section class="login">
+        <h2>Bem vindo!</h2>
+        <form action="">
+            <input required type="text" placeholder="CPF / CNPJ ou E-mail">
+            <input required type="password" name="" id="" placeholder="Senha">
+            <a href="">Esqueci minha senha</a>
+            <button class="entrar" type="submit">ENTRAR</button>
+            <button class="criar-conta">CRIAR UMA CONTA</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="foot-wrapper">
+            <div class="title">
+                <h2>
+                    <a href="">
+                        FutNets
+                        <i class="fas fa-futbol"></i>
+                    </a>
+                </h2>
+                <h2>
+                    <div class="social">
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </h2>
+            </div>
+                <p>
+                    Os preços, promoções, condições de pagamento, frete e produtos são válidos exclusivamente para compras realizadas via internet.
+    Fotos meramente ilustrativas. Copyright © 2020-2022 - FutNets.com.br. Todos os direitos reservados.
+                </p>
+        </div>
+    </footer>
+        <div class="chat-app">
+            <div class="msg-top">
+                <div class="msg-user">
+                    <i class="far fa-user"></i>
+                    <p>BOT</p>
+                </div>
+                <a href="#" class="exit">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <div class="messages">
+                <p class="bot-side">Olá! No que podemos ajudar? :)</p>
+            </div>
+            <div class="write">
+                    <input type="text" id="msg-txt">
+                    <button id="send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chat-icon">
+            <a href="#"><i class="fas fa-comment-dots"></i></a>
+        </div>
+</body>
+
+<script src="script.js"></script>
+</html>
