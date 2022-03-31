@@ -534,10 +534,6 @@ footer .title .social a{
 }
 
 @media (max-width: 1200px) {
-    /*.produtos ul {
-        margin: 50px ;
-    }*/
-
     .produtos li {
         width: 300px;
         height: 400px;

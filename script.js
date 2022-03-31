@@ -13,26 +13,26 @@ bannerNext.onclick = () => {
     banners[getBanner2()].style.zIndex = `${i++}`
 }
 
-function nextBanner (){
+function nextBanner() {
     banners[getBanner()].style.left = '0'
     banners[getBanner2()].style.zIndex = `${i++}`
 }
 
 setInterval(nextBanner, 3000)
 
-bannerBack.onclick = function() {
+bannerBack.onclick = function () {
     banners[getBanner2()].style.right = '0'
 }
 
 let index = 0
-function getBanner(){
-    index == banners.length -1 ? index = 0 : index++
+function getBanner() {
+    index == banners.length - 1 ? index = 0 : index++
     return index
 }
 
 let index2 = -1
-function getBanner2(){
-    index2 == banners.length -1 ? index2 = 0: index2++
+function getBanner2() {
+    index2 == banners.length - 1 ? index2 = 0 : index2++
     return index2
 }
 
@@ -41,17 +41,17 @@ function getBanner2(){
 const user = document.querySelector('.user')
 const informations = document.querySelector('.informations')
 
-user.onmouseenter = function() {
+user.onmouseenter = function () {
     informations.style.display = 'block'
 }
 
-user.onmouseover = function() {
+user.onmouseover = function () {
     informations.style.display = 'none'
 }
 
 const cadastro = document.querySelector('.ent-cad')
 
-cadastro.onclick = function() {
+cadastro.onclick = function () {
     document.querySelector('.produtos').style.display = 'none'
     document.querySelector('.categorias').style.display = 'none'
     document.querySelector('.banner').style.display = 'none'
@@ -66,30 +66,32 @@ cadastro.onclick = function() {
 
 const chat = document.querySelector('.chat-app')
 const chatIcon = document.querySelector('.chat-icon')
-chatIcon.onclick = function(){
+chatIcon.onclick = function () {
     chatIcon.style.display = 'none'
     chat.style.display = 'flex'
+    return false
 }
 
 const sair = document.querySelector('.exit')
-sair.onclick = function(){
+sair.onclick = function () {
     chat.style.display = 'none'
     chatIcon.style.display = 'block'
+    return false
 }
 
 const enviar = document.getElementById('send')
 const mensagem = document.getElementById('msg-txt')
 
-enviar.onclick = function(){
+enviar.onclick = function () {
     document.querySelector('.messages').innerHTML += `<p class="client-side">${mensagem.value}</p>`
     mensagem.value = ''
 }
 
-// adicionando os produtos dinamicamente
+//produtos
 
 const vitrine = document.querySelector('.produtos > ul')
 
-function adicionarProduto(produto){
+function mostrarProduto(produto) {
     vitrine.innerHTML += `           <li>
     <a href="">
         <img class="image" src="${produto.imgFrente}" >
@@ -102,190 +104,121 @@ function adicionarProduto(produto){
 </li>`
 }
 
+
+function Produto(nome, categoria, imgFrente, imgCostas, preco) {
+    this.nome = nome
+    this.categoria = categoria
+    this.imgFrente = imgFrente
+    this.imgCostas = imgCostas
+    this.preco = preco
+}
+
 let categorias = ['Homem Futebol', 'Mulher Futebol']
+let produtos = [
+    new Produto('Camisa 1 Real Madrid 21/22', categorias[0], 'img/real.webp', 'img/real-costas.webp', 239.99)
+    ,
+    new Produto('Camisa 1 Barcelona 21/22', categorias[0], 'img/barca.webp', 'img/barca-costas.webp', 239.99)
+    ,
+    new Produto('Camisa 1 Manchester United 21/22', categorias[0], 'img/united.jpg', 'img/united-costas.webp', 239.99)
+    ,
+    new Produto('Camisa 1 Paris Saint Germain 21/22', categorias[0], 'img/psg.webp', 'img/psg-costas.webp', 239.99)
+    ,
+    new Produto('Camisa 1 Flamengo 2021 Feminina', categorias[1], 'img/fla-fem.webp', 'img/fla-fem-costas.webp', 239.99)
+    ,
+    new Produto('Jaqueta Pré-jogo Flamengo', categorias[0], 'img/fla-jaque.jpg', 'img/fla-jaque-costas.jpg', 269.99)
+]
 
-let produtos = [{
-    nome: 'Camisa 1 Real Madrid 21/22',
-    categoria: categorias[0],
-    imgFrente: 'img/real.webp',
-    imgCostas: 'img/real-costas.webp',
-    preco: '239,99'
-},
-{
-    nome: 'Camisa 1 Barcelona 21/22',
-    categoria: categorias[0],
-    imgFrente: 'img/barca.webp',
-    imgCostas: 'img/barca-costas.webp',
-    preco: '239,99'
-},
-{
-    nome: 'Camisa 1 Manchester United 21/22',
-    categoria: categorias[0],
-    imgFrente: 'img/united.jpg',
-    imgCostas: 'img/united-costas.webp',
-    preco: '239,99'
-},
-{
-    nome: 'Camisa 1 Paris Saint Germain 21/22',
-    categoria: categorias[0],
-    imgFrente: 'img/psg.webp',
-    imgCostas: 'img/psg-costas.webp',
-    preco: '239,99'
-},
-{
-    nome: 'Camisa 1 Flamengo 2021 Feminina',
-    categoria: categorias[1],
-    imgFrente: 'img/fla-fem.webp',
-    imgCostas: 'img/fla-fem-costas.webp',
-    preco: '239,99'
-},
-{
-    nome: 'Jaqueta Pré-jogo Flamengo',
-    categoria: categorias[0],
-    imgFrente: 'img/fla-jaque.jpg',
-    imgCostas: 'img/fla-jaque-costas.jpg',
-    preco: '269,99'
-}]
+produtos.filter(e => e.categoria == categorias[0]).forEach(e => mostrarProduto(e))
 
-produtos.filter(e => e.categoria == 'Homem Futebol').forEach(e => adicionarProduto(e))
+function Categoria(local, times) {
+    this.local = local
+    this.times = times
+}
 
-// categorias 
-
-let timesBR = [{
-    estado: 'Rio de Janeiro',
-    times: [
-        'Flamengo',
-        'Vasco',
-        'Botafogo',
-        'Fluminense'
-    ]
-},
-{
-    estado: 'São Paulo',
-    times: [
-        'Palmeiras',
-        'Corinthians',
-        'São Paulo',
-        'Santos'
-    ]
-},
-{
-    estado: 'Minas Gerais',
-    times: [
-        'Atlético MG',
-        'Cruzeiro'
-    ]
-}]
+let timesBR = [
+    new Categoria('Rio de Janeiro',
+        ['Flamengo', 'Botafogo', 'Vasco', 'Fluminense'])
+    ,
+    new Categoria('São Paulo',
+        ['Palmeiras', 'Corinthians', 'São Paulo', 'Santos'])
+    ,
+    new Categoria('Minas Gerais',
+        ['Atlético-MG', 'Cruzeiro', 'América-MG'])
+]
 
 
-let timesInter = [{
-    pais: 'França',
-    times: [
-        'Paris Saint Germain',
-        'Olympique de Marseille',
-        'AS Monaco'
-    ]
-},
-{
-    pais: 'Espanha',
-    times: [
-        'Real Madrid',
-        'Barcelona',
-        'Atlético de Madrid'
-    ]
-},
-{
-    pais: 'Inglaterra',
-    times: [
-        'Liverpool',
-        'Manchester United',
-        'Manchester City',
-        'Chelsea',
-        'Tottenham',
-        'Leicester',
-    ]
-},
-{
-    pais: 'Alemanha',
-    times: [
-        'Baynern Munchen',
-        'Borussia Dortmund'
-    ]
-}]
+let timesInter = [
+    new Categoria('França',
+        ['Paris Saint Germain', 'Olympique de Marseille', 'AS Monaco'])
+    ,
+    new Categoria('Espanha',
+        ['Real Madrid', 'Barcelona', 'Atlético de Madrid'])
+    ,
+    new Categoria('Inglaterra',
+        ['Liverpool', 'Manchester United', 'Manchester City', 'Chelsea', 'Tottenham'])
+    ,
+    new Categoria('Alemanha',
+        ['Bayern Munchen', 'Borussia Dortmund'])
+]
 
-let selecoes = [{
-    continente: 'América do Sul',
-    times: [
-        'Brasil',
-        'Argentina',
-        'Uruguai',
-        'Chile',
-        'Colômbia',
-        'Peru',
-        'Paraguai'
-    ]
-},
-{
-    continente: 'Europa',
-    times: [
-        'Espanha',
-        'Alemanha',
-        'Portugal',
-        'Inglaterra',
-        'Itália',
-        'Belgica',
-        'França',
-        'Holanda'
-    ]
-}]
+let selecoes = [
+    new Categoria('América do Sul',
+        ['Brasil', 'Argentina', 'Uruguai', 'Chile', 'Colômbia', 'Peru', 'Paraguai'])
+    ,
+    new Categoria('Europa',
+        ['Espanha', 'Alemanha', 'Portugal', 'Inglaterra', 'Itália', 'Bélgica', 'França', 'Holanda']),
 
-const itensCat = document.querySelector('.itens-cat') 
+    new Categoria('África',
+        ['Nigéria', 'Costa do Marfim', 'África do Sul', 'Camarões', 'Marrocos'])
+]
+
+const itensCat = document.querySelector('.itens-cat')
 
 const catInter = document.getElementById('inter-cat')
-catInter.onmouseenter = function() { getCategoria(catInter, timesInter, 'pais') }
+catInter.onmouseenter = function () { getCategoria(catInter, timesInter, 'pais') }
 
 const catBR = document.getElementById('br-cat')
-catBR.onmouseenter = function() { getCategoria(catBR, timesBR, 'estado') }
+catBR.onmouseenter = function () { getCategoria(catBR, timesBR, 'local') }
 
 const catSele = document.getElementById('sele-cat')
-catSele.onmouseenter = function() { getCategoria(catSele, selecoes, 'continente')}
+catSele.onmouseenter = function () { getCategoria(catSele, selecoes, 'continente') }
 
-    function getCategoria(categoria, objCat, regiao){
-        function enter() {
-            itensCat.style.display = 'flex'
-            itensCat.innerHTML = `        <ul>
+function getCategoria(categoria, objCat) {
+    function enter() {
+        itensCat.style.display = 'flex'
+        itensCat.innerHTML = `        <ul>
             <h3>Gênero</h3>
             <li><a href="">Masculino</a></li>
             <li><a href="">Feminino</a></li>
             <li><a href="">Infantil</a></li>
             </ul>`
-            objCat.forEach((e,i) => {
-                    itensCat.innerHTML += `<ul id=${i} class="itens"><a href=""><h3>${e[regiao]}</h3></a></ul>`
-                    e.times.forEach(time => document.getElementById(`${i}`).innerHTML += `<li><a href="">${time}</a></li>`)
-                })
-            }
-            enter()
-        
-            categoria.onmouseout = function() {
-                itensCat.style.display = 'none'
-                itensCat.innerHTML = `        <ul>
+        objCat.forEach((e, i) => {
+            itensCat.innerHTML += `<ul id=${i} class="itens"><a href=""><h3>${e.local}</h3></a></ul>`
+            e.times.forEach(time => document.getElementById(`${i}`).innerHTML += `<li><a href="">${time}</a></li>`)
+        })
+    }
+    enter()
+
+    categoria.onmouseout = function () {
+        itensCat.style.display = 'none'
+        itensCat.innerHTML = `        <ul>
                 <h3>Gênero</h3>
                 <li><a href="">Masculino</a></li>
                 <li><a href="">Feminino</a></li>
                 <li><a href="">Infantil</a></li>
                 </ul>`
-            }
-        
-            itensCat.onmouseenter = function() {
-                itensCat.style.display = 'flex'
-                objCat.forEach((e,i) => {
-                    itensCat.innerHTML += `<ul id=${i} class="itens"><h3>${e[regiao]}</h3></ul>`
-                    e.times.forEach(time => document.getElementById(`${i}`).innerHTML += `<li><a href="">${time}</a></li>`)
-                })
-            }
     }
-    
-    const inv = document.querySelector('#inv')
-    inv.onmouseenter = function () {
-        document.querySelector('.itens-cat').style.display = 'none'
+
+    itensCat.onmouseenter = function () {
+        itensCat.style.display = 'flex'
+        objCat.forEach((e, i) => {
+            itensCat.innerHTML += `<ul id=${i} class="itens"><h3>${e.local}</h3></ul>`
+            e.times.forEach(time => document.getElementById(`${i}`).innerHTML += `<li><a href="">${time}</a></li>`)
+        })
     }
+}
+
+const inv = document.querySelector('#inv')
+inv.onmouseenter = function () {
+    document.querySelector('.itens-cat').style.display = 'none'
+}
